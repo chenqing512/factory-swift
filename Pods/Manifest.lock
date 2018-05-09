@@ -1,16 +1,16 @@
 PODS:
-  - RAMAnimatedTabBarController (3.0.4)
+  - CYLTabBarController (1.17.6)
 
 DEPENDENCIES:
-  - RAMAnimatedTabBarController
+  - CYLTabBarController (~> 1.17.4)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - RAMAnimatedTabBarController
+    - CYLTabBarController
 
 SPEC CHECKSUMS:
-  RAMAnimatedTabBarController: f4df798eb3f374b80448908d3a18586421efb8f6
+  CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
 
-PODFILE CHECKSUM: 793e1db43b4df4eabe2cdac462146e4e060eab10
+PODFILE CHECKSUM: cf00bf76f38bcbaa1bcdced122fb4871e331bc86
 
 COCOAPODS: 1.5.0

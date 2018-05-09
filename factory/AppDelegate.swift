@@ -12,9 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tabBarController: CYLTabBarController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        window?.frame = UIScreen.main.bounds
+        window?.backgroundColor = UIColor.white
+        setupViewControllers();
+        window?.rootViewController = tabBarController;
+        window?.makeKeyAndVisible()
+        
         // Override point for customization after application launch.
         return true
     }
@@ -42,5 +48,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension AppDelegate {
+    fileprivate func setupViewControllers(){
+        let firstNav = UINavigationController(rootViewController:FirstViewController());
+        let secondVC = UINavigationController(rootViewController:SecondViewController());
+        let thirdVC = UINavigationController(rootViewController:ThirdViewController());
+        let tabBarCtrl = CYLTabBarController();
+        customTabBarForController(tabBarController: tabBarCtrl);
+        tabBarCtrl.viewControllers = [firstNav,secondVC,thirdVC];
+        tabBarCtrl.tabBar.backgroundColor = UIColor.black;
+        tabBarController = tabBarCtrl;
+    }
+    
+    private func customTabBarForController(tabBarController: CYLTabBarController){
+        let dict1 = [
+            CYLTabBarItemImage : "tabbar_discovery_icon",
+            CYLTabBarItemSelectedImage : "tabbar_discovery_icon_selected"
+        ];
+        let dict2 = [
+            CYLTabBarItemImage : "tabbar_homepage_icon",
+            CYLTabBarItemSelectedImage : "tabbar_homepage_icon_selected"
+        ];
+        
+        let dict3 = [
+            CYLTabBarItemImage : "tabbar_me_icon",
+            CYLTabBarItemSelectedImage : "tabbar_me_icon_selected"
+        ];
+        tabBarController.tabBarItemsAttributes = [dict1,dict2,dict3];
+
+    }
+    
 }
 
