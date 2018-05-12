@@ -27,7 +27,7 @@ let kWG_NOTIFICATION_ACCOUNT_LOGIN_SUCCESS = "kWG_NOTIFICATION_ACCOUNT_LOGIN_SUC
 
 
 class WGUtil: NSObject {
-    
+    //MARK 获取屏幕宽高
     ///屏幕宽度
     ///
     /// - Returns: 宽
@@ -49,6 +49,19 @@ class WGUtil: NSObject {
         view.backgroundColor = UIColor.black.withAlphaComponent(0.1);
         return view;
     }
+    class func setWindowRootVC(vc: UIViewController, animated: Bool){
+        
+        let oldRootVC = UIApplication.shared.keyWindow?.rootViewController;
+        if animated {
+            UIView.transition(from: (oldRootVC?.view)!, to: vc.view, duration: 0.5, options: [UIViewAnimationOptions.curveEaseOut, UIViewAnimationOptions.transitionCrossDissolve], completion: { (finished) in
+                UIApplication.shared.keyWindow?.rootViewController = vc;
+            })
+        }else{
+            UIApplication.shared.keyWindow?.rootViewController = vc;
+        } 
+    
+    }
+    //MARK 文件上传
     class func createUplaodFileName(userID: Int)->(String){
         let time =  NSDate().timeIntervalSince1970;
         let scope = "0123456789abcdefghijklmnopqrstuvwxyz";

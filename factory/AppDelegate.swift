@@ -13,25 +13,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var tabBarController: CYLTabBarController!
+    var welcomeVC = UINavigationController(rootViewController:WelcomeViewController())
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         window?.frame = UIScreen.main.bounds
         window?.backgroundColor = UIColor.white
         setupViewControllers();
-        window?.rootViewController = tabBarController;
+        window?.rootViewController = welcomeVC;
         window?.makeKeyAndVisible()
         
         // Override point for customization after application launch.
         return true
     }
     
+    
+    func logout(){
+        SharedData.user = nil;
+        WGUtil.setWindowRootVC(vc: welcomeVC, animated: true);
+    }
+    
     @objc func receiveObserve(noti: Notification){
         if noti.name.rawValue == kWG_NOTIFICATION_ACCOUNT_LOGIN_OTHER{//其它手机登录
-            
+            logout();
         } else if noti.name.rawValue == kWG_NOTIFICATION_ACCOUNT_LOGOUT{ //退出
-            
+            logout()
         }else if noti.name.rawValue == kWG_NOTIFICATION_ACCOUNT_LOGIN_SUCCESS{ //登录成功
-            
+            WGUtil.setWindowRootVC(vc: tabBarController, animated: true);
         }
     }
 

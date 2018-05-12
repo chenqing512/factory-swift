@@ -14,6 +14,7 @@
 		614E581B209C455400B928B5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E581A209C455400B928B5 /* SecondViewController.swift */; };
 		614E581D209C455F00B928B5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E581C209C455F00B928B5 /* ThirdViewController.swift */; };
 		614E581F209C456A00B928B5 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614E581E209C456A00B928B5 /* FourViewController.swift */; };
+		6154291920A6C93500342DC0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6154291820A6C93500342DC0 /* LoginViewController.xib */; };
 		6158FA3A209AFEA300E54289 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158FA39209AFEA300E54289 /* AppDelegate.swift */; };
 		6158FA3F209AFEA300E54289 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6158FA3D209AFEA300E54289 /* Main.storyboard */; };
 		6158FA41209AFEA300E54289 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6158FA40209AFEA300E54289 /* Assets.xcassets */; };
@@ -78,6 +79,7 @@
 		614E581A209C455400B928B5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		614E581C209C455F00B928B5 /* ThirdViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		614E581E209C456A00B928B5 /* FourViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FourViewController.swift; sourceTree = "<group>"; };
+		6154291820A6C93500342DC0 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		6158FA36209AFEA300E54289 /* factory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = factory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6158FA39209AFEA300E54289 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6158FA3E209AFEA300E54289 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				61663F4F20A55EDB00E4054A /* WelcomeViewController.swift */,
 				61663F5020A55EDB00E4054A /* WelcomeViewController.xib */,
 				61663F5320A563A900E4054A /* LoginViewController.swift */,
+				6154291820A6C93500342DC0 /* LoginViewController.xib */,
 			);
 			path = LoginController;
 			sourceTree = "<group>";
@@ -501,6 +504,7 @@
 				6158FA41209AFEA300E54289 /* Assets.xcassets in Resources */,
 				6158FA3F209AFEA300E54289 /* Main.storyboard in Resources */,
 				618C742220A016CE007FC11A /* tabbar_me_icon_selected@3x.png in Resources */,
+				6154291920A6C93500342DC0 /* LoginViewController.xib in Resources */,
 				618C741E20A016CE007FC11A /* tabbar_homepage_icon_selected@3x.png in Resources */,
 				61663F6420A571DE00E4054A /* start_up_logo_icon@2x.png in Resources */,
 				618C741F20A016CE007FC11A /* tabbar_me_icon@2x.png in Resources */,
