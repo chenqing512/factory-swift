@@ -24,6 +24,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         return true
     }
+    
+    @objc func receiveObserve(noti: Notification){
+        if noti.name.rawValue == kWG_NOTIFICATION_ACCOUNT_LOGIN_OTHER{//其它手机登录
+            
+        } else if noti.name.rawValue == kWG_NOTIFICATION_ACCOUNT_LOGOUT{ //退出
+            
+        }else if noti.name.rawValue == kWG_NOTIFICATION_ACCOUNT_LOGIN_SUCCESS{ //登录成功
+            
+        }
+    }
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -79,6 +89,14 @@ extension AppDelegate {
         tabBarController.tabBarItemsAttributes = [dict1,dict2,dict3];
 
     }
+    
+    
+    fileprivate func registerNotification(){
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveObserve(noti:)), name: NSNotification.Name(kWG_NOTIFICATION_ACCOUNT_LOGIN_OTHER), object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveObserve(noti:)), name: NSNotification.Name(kWG_NOTIFICATION_ACCOUNT_LOGOUT), object: nil);
+        NotificationCenter.default.addObserver(self, selector: #selector(receiveObserve(noti:)), name: NSNotification.Name( kWG_NOTIFICATION_ACCOUNT_LOGIN_SUCCESS), object: nil);
+    }
+    
     
 }
 

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WelcomeViewController" customModule="factory" customModuleProvider="target">
+            <connections>
+                <outlet property="agreementBtn" destination="7SI-vB-FDR" id="IBF-Up-gAG"/>
+                <outlet property="loginBtn" destination="l7U-H1-r6H" id="cfo-f7-KH2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guide_v2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gxl-0K-geM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="start_up_logo_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="LJv-P1-LNT">
+                    <rect key="frame" x="139.5" y="67" width="96" height="142"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="96" id="F4N-8X-nzb"/>
+                        <constraint firstAttribute="height" constant="142" id="NV9-P3-PR0"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bSl-td-cB4">
+                    <rect key="frame" x="0.0" y="354" width="375" height="37.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="—">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="高端">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="高素质">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content=" ">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="高颜值">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment>
+                            <string key="content">—
+</string>
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" metaFont="system" size="17"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="视频社交">
+                            <attributes>
+                                <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <font key="NSFont" size="17" name=".PingFangSC-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l7U-H1-r6H">
+                    <rect key="frame" x="111.5" y="434.5" width="151" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="51O-EQ-DRH"/>
+                        <constraint firstAttribute="width" constant="151" id="bDN-9Y-fAW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="立即登录" backgroundImage="login_btn.png">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="loginBtnClick:" destination="-1" eventType="touchUpInside" id="CxM-N3-yim"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7SI-vB-FDR">
+                    <rect key="frame" x="0.0" y="605" width="375" height="23"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="注册或登录即代表你同意">
+                                <attributes>
+                                    <color key="NSColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content=" ">
+                                <attributes>
+                                    <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="《用户协议》">
+                                <attributes>
+                                    <color key="NSColor" red="1" green="0.37254901960784315" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <font key="NSFont" size="11" name=".PingFangSC-Regular"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
+                    <connections>
+                        <action selector="agreeBtnClick:" destination="-1" eventType="touchUpInside" id="hVu-Aa-SLV"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Gxl-0K-geM" secondAttribute="bottom" id="3eh-g1-mFO"/>
+                <constraint firstItem="l7U-H1-r6H" firstAttribute="top" secondItem="bSl-td-cB4" secondAttribute="bottom" constant="43" id="BeV-QL-NXq"/>
+                <constraint firstItem="LJv-P1-LNT" firstAttribute="centerX" secondItem="Gxl-0K-geM" secondAttribute="centerX" id="Fhi-BZ-782"/>
+                <constraint firstItem="7SI-vB-FDR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JNT-bG-cHH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Gxl-0K-geM" secondAttribute="trailing" id="Lcl-qY-ocl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bSl-td-cB4" secondAttribute="trailing" id="MPe-MT-36N"/>
+                <constraint firstItem="bSl-td-cB4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PMa-tV-AMW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="7SI-vB-FDR" secondAttribute="bottom" constant="39" id="ZCs-PR-97T"/>
+                <constraint firstItem="LJv-P1-LNT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="47" id="bat-Et-WGc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7SI-vB-FDR" secondAttribute="trailing" id="cul-mY-PkX"/>
+                <constraint firstItem="Gxl-0K-geM" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-20" id="g95-M3-Ztt"/>
+                <constraint firstItem="bSl-td-cB4" firstAttribute="top" secondItem="LJv-P1-LNT" secondAttribute="bottom" constant="145" id="hCa-sx-VCt"/>
+                <constraint firstItem="Gxl-0K-geM" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nlI-aS-JaG"/>
+                <constraint firstItem="l7U-H1-r6H" firstAttribute="centerX" secondItem="LJv-P1-LNT" secondAttribute="centerX" id="sj2-Xc-WFM"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="guide_v2.png" width="375" height="667"/>
+        <image name="login_btn.png" width="150" height="44"/>
+        <image name="start_up_logo_icon.png" width="95" height="141"/>
+    </resources>
+</document>

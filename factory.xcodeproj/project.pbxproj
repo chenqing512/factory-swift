@@ -20,6 +20,24 @@
 		6158FA44209AFEA300E54289 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6158FA42209AFEA300E54289 /* LaunchScreen.storyboard */; };
 		6158FA4F209AFEA300E54289 /* factoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158FA4E209AFEA300E54289 /* factoryTests.swift */; };
 		6158FA5A209AFEA300E54289 /* factoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158FA59209AFEA300E54289 /* factoryUITests.swift */; };
+		615B341E20A3E07200538C69 /* WGSharedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B341D20A3E07200538C69 /* WGSharedData.swift */; };
+		615B342020A3E23F00538C69 /* WGUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B341F20A3E23F00538C69 /* WGUser.swift */; };
+		615B342220A3E5FB00538C69 /* WGAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B342120A3E5FB00538C69 /* WGAvatar.swift */; };
+		615B342420A3E9F800538C69 /* WGShare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B342320A3E9F800538C69 /* WGShare.swift */; };
+		615B342620A3EC3E00538C69 /* WGImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B342520A3EC3E00538C69 /* WGImage.swift */; };
+		615B342820A3F72700538C69 /* WGSharedMacr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 615B342720A3F72700538C69 /* WGSharedMacr.swift */; };
+		61663F1020A5253A00E4054A /* WGNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61663F0F20A5253A00E4054A /* WGNavigationController.swift */; };
+		61663F5120A55EDB00E4054A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61663F4F20A55EDB00E4054A /* WelcomeViewController.swift */; };
+		61663F5220A55EDB00E4054A /* WelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61663F5020A55EDB00E4054A /* WelcomeViewController.xib */; };
+		61663F5420A563A900E4054A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61663F5320A563A900E4054A /* LoginViewController.swift */; };
+		61663F5620A563DD00E4054A /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61663F5520A563DD00E4054A /* LoginPresenter.swift */; };
+		61663F5820A564CB00E4054A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61663F5720A564CB00E4054A /* LoginModel.swift */; };
+		61663F6220A571DE00E4054A /* guide_v2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F5C20A571DD00E4054A /* guide_v2@3x.png */; };
+		61663F6320A571DE00E4054A /* login_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F5D20A571DD00E4054A /* login_btn@3x.png */; };
+		61663F6420A571DE00E4054A /* start_up_logo_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F5E20A571DE00E4054A /* start_up_logo_icon@2x.png */; };
+		61663F6520A571DE00E4054A /* start_up_logo_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F5F20A571DE00E4054A /* start_up_logo_icon@3x.png */; };
+		61663F6620A571DE00E4054A /* guide_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F6020A571DE00E4054A /* guide_v2@2x.png */; };
+		61663F6720A571DE00E4054A /* login_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F6120A571DE00E4054A /* login_btn@2x.png */; };
 		618C741720A016CE007FC11A /* tabbar_discovery_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618C740B20A016CD007FC11A /* tabbar_discovery_icon@2x.png */; };
 		618C741820A016CE007FC11A /* tabbar_discovery_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618C740C20A016CD007FC11A /* tabbar_discovery_icon@3x.png */; };
 		618C741920A016CE007FC11A /* tabbar_discovery_icon_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618C740D20A016CD007FC11A /* tabbar_discovery_icon_selected@2x.png */; };
@@ -72,6 +90,24 @@
 		6158FA55209AFEA300E54289 /* factoryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = factoryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6158FA59209AFEA300E54289 /* factoryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = factoryUITests.swift; sourceTree = "<group>"; };
 		6158FA5B209AFEA300E54289 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		615B341D20A3E07200538C69 /* WGSharedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGSharedData.swift; sourceTree = "<group>"; };
+		615B341F20A3E23F00538C69 /* WGUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGUser.swift; sourceTree = "<group>"; };
+		615B342120A3E5FB00538C69 /* WGAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGAvatar.swift; sourceTree = "<group>"; };
+		615B342320A3E9F800538C69 /* WGShare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGShare.swift; sourceTree = "<group>"; };
+		615B342520A3EC3E00538C69 /* WGImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGImage.swift; sourceTree = "<group>"; };
+		615B342720A3F72700538C69 /* WGSharedMacr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGSharedMacr.swift; sourceTree = "<group>"; };
+		61663F0F20A5253A00E4054A /* WGNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGNavigationController.swift; sourceTree = "<group>"; };
+		61663F4F20A55EDB00E4054A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		61663F5020A55EDB00E4054A /* WelcomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WelcomeViewController.xib; sourceTree = "<group>"; };
+		61663F5320A563A900E4054A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		61663F5520A563DD00E4054A /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		61663F5720A564CB00E4054A /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		61663F5C20A571DD00E4054A /* guide_v2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_v2@3x.png"; sourceTree = "<group>"; };
+		61663F5D20A571DD00E4054A /* login_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn@3x.png"; sourceTree = "<group>"; };
+		61663F5E20A571DE00E4054A /* start_up_logo_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start_up_logo_icon@2x.png"; sourceTree = "<group>"; };
+		61663F5F20A571DE00E4054A /* start_up_logo_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start_up_logo_icon@3x.png"; sourceTree = "<group>"; };
+		61663F6020A571DE00E4054A /* guide_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_v2@2x.png"; sourceTree = "<group>"; };
+		61663F6120A571DE00E4054A /* login_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn@2x.png"; sourceTree = "<group>"; };
 		618C740B20A016CD007FC11A /* tabbar_discovery_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discovery_icon@2x.png"; sourceTree = "<group>"; };
 		618C740C20A016CD007FC11A /* tabbar_discovery_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discovery_icon@3x.png"; sourceTree = "<group>"; };
 		618C740D20A016CD007FC11A /* tabbar_discovery_icon_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discovery_icon_selected@2x.png"; sourceTree = "<group>"; };
@@ -126,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				6116A92920A283AF00DFCE76 /* WGViewController.swift */,
+				61663F0F20A5253A00E4054A /* WGNavigationController.swift */,
 			);
 			path = WGViewCtrls;
 			sourceTree = "<group>";
@@ -134,6 +171,8 @@
 			isa = PBXGroup;
 			children = (
 				6116A92C20A2CB1200DFCE76 /* WGUtil.swift */,
+				615B341D20A3E07200538C69 /* WGSharedData.swift */,
+				615B342720A3F72700538C69 /* WGSharedMacr.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -164,6 +203,7 @@
 		614E5814209C44E100B928B5 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				61663F4B20A55B4B00E4054A /* LoginModule */,
 				618C7407209FFF1F007FC11A /* TabBarCtrl */,
 			);
 			path = Modules;
@@ -172,6 +212,7 @@
 		614E5815209C44E800B928B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				61663F5B20A571B200E4054A /* LoginImgs */,
 				618C740A20A016CD007FC11A /* MainImgs */,
 			);
 			path = Resources;
@@ -180,16 +221,12 @@
 		614E5816209C44F000B928B5 /* BaseModels */ = {
 			isa = PBXGroup;
 			children = (
-				614E5817209C451B00B928B5 /* TestMoudle */,
+				615B341F20A3E23F00538C69 /* WGUser.swift */,
+				615B342320A3E9F800538C69 /* WGShare.swift */,
+				615B342120A3E5FB00538C69 /* WGAvatar.swift */,
+				615B342520A3EC3E00538C69 /* WGImage.swift */,
 			);
 			path = BaseModels;
-			sourceTree = "<group>";
-		};
-		614E5817209C451B00B928B5 /* TestMoudle */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TestMoudle;
 			sourceTree = "<group>";
 		};
 		6158FA2D209AFEA300E54289 = {
@@ -249,6 +286,55 @@
 				6158FA5B209AFEA300E54289 /* Info.plist */,
 			);
 			path = factoryUITests;
+			sourceTree = "<group>";
+		};
+		61663F4B20A55B4B00E4054A /* LoginModule */ = {
+			isa = PBXGroup;
+			children = (
+				61663F4D20A55CED00E4054A /* LoginController */,
+				61663F4E20A55CED00E4054A /* LoginModel */,
+				61663F4C20A55CED00E4054A /* LoginPresenter */,
+			);
+			path = LoginModule;
+			sourceTree = "<group>";
+		};
+		61663F4C20A55CED00E4054A /* LoginPresenter */ = {
+			isa = PBXGroup;
+			children = (
+				61663F5520A563DD00E4054A /* LoginPresenter.swift */,
+			);
+			path = LoginPresenter;
+			sourceTree = "<group>";
+		};
+		61663F4D20A55CED00E4054A /* LoginController */ = {
+			isa = PBXGroup;
+			children = (
+				61663F4F20A55EDB00E4054A /* WelcomeViewController.swift */,
+				61663F5020A55EDB00E4054A /* WelcomeViewController.xib */,
+				61663F5320A563A900E4054A /* LoginViewController.swift */,
+			);
+			path = LoginController;
+			sourceTree = "<group>";
+		};
+		61663F4E20A55CED00E4054A /* LoginModel */ = {
+			isa = PBXGroup;
+			children = (
+				61663F5720A564CB00E4054A /* LoginModel.swift */,
+			);
+			path = LoginModel;
+			sourceTree = "<group>";
+		};
+		61663F5B20A571B200E4054A /* LoginImgs */ = {
+			isa = PBXGroup;
+			children = (
+				61663F6020A571DE00E4054A /* guide_v2@2x.png */,
+				61663F5C20A571DD00E4054A /* guide_v2@3x.png */,
+				61663F6120A571DE00E4054A /* login_btn@2x.png */,
+				61663F5D20A571DD00E4054A /* login_btn@3x.png */,
+				61663F5E20A571DE00E4054A /* start_up_logo_icon@2x.png */,
+				61663F5F20A571DE00E4054A /* start_up_logo_icon@3x.png */,
+			);
+			path = LoginImgs;
 			sourceTree = "<group>";
 		};
 		618C7407209FFF1F007FC11A /* TabBarCtrl */ = {
@@ -401,10 +487,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				618C741720A016CE007FC11A /* tabbar_discovery_icon@2x.png in Resources */,
+				61663F6520A571DE00E4054A /* start_up_logo_icon@3x.png in Resources */,
 				618C741B20A016CE007FC11A /* tabbar_homepage_icon@2x.png in Resources */,
 				618C741820A016CE007FC11A /* tabbar_discovery_icon@3x.png in Resources */,
 				618C741C20A016CE007FC11A /* tabbar_homepage_icon@3x.png in Resources */,
 				618C741D20A016CE007FC11A /* tabbar_homepage_icon_selected@2x.png in Resources */,
+				61663F6220A571DE00E4054A /* guide_v2@3x.png in Resources */,
+				61663F6320A571DE00E4054A /* login_btn@3x.png in Resources */,
+				61663F5220A55EDB00E4054A /* WelcomeViewController.xib in Resources */,
 				6158FA44209AFEA300E54289 /* LaunchScreen.storyboard in Resources */,
 				618C741A20A016CE007FC11A /* tabbar_discovery_icon_selected@3x.png in Resources */,
 				618C741920A016CE007FC11A /* tabbar_discovery_icon_selected@2x.png in Resources */,
@@ -412,9 +502,12 @@
 				6158FA3F209AFEA300E54289 /* Main.storyboard in Resources */,
 				618C742220A016CE007FC11A /* tabbar_me_icon_selected@3x.png in Resources */,
 				618C741E20A016CE007FC11A /* tabbar_homepage_icon_selected@3x.png in Resources */,
+				61663F6420A571DE00E4054A /* start_up_logo_icon@2x.png in Resources */,
 				618C741F20A016CE007FC11A /* tabbar_me_icon@2x.png in Resources */,
 				618C742120A016CE007FC11A /* tabbar_me_icon_selected@2x.png in Resources */,
+				61663F6620A571DE00E4054A /* guide_v2@2x.png in Resources */,
 				618C742020A016CE007FC11A /* tabbar_me_icon@3x.png in Resources */,
+				61663F6720A571DE00E4054A /* login_btn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,8 +573,19 @@
 			files = (
 				614E581B209C455400B928B5 /* SecondViewController.swift in Sources */,
 				614E5819209C453900B928B5 /* FirstViewController.swift in Sources */,
+				615B342220A3E5FB00538C69 /* WGAvatar.swift in Sources */,
+				61663F1020A5253A00E4054A /* WGNavigationController.swift in Sources */,
 				614E581F209C456A00B928B5 /* FourViewController.swift in Sources */,
+				615B342020A3E23F00538C69 /* WGUser.swift in Sources */,
+				61663F5120A55EDB00E4054A /* WelcomeViewController.swift in Sources */,
+				615B342620A3EC3E00538C69 /* WGImage.swift in Sources */,
 				614E581D209C455F00B928B5 /* ThirdViewController.swift in Sources */,
+				61663F5620A563DD00E4054A /* LoginPresenter.swift in Sources */,
+				615B341E20A3E07200538C69 /* WGSharedData.swift in Sources */,
+				615B342420A3E9F800538C69 /* WGShare.swift in Sources */,
+				615B342820A3F72700538C69 /* WGSharedMacr.swift in Sources */,
+				61663F5820A564CB00E4054A /* LoginModel.swift in Sources */,
+				61663F5420A563A900E4054A /* LoginViewController.swift in Sources */,
 				6116A92A20A283AF00DFCE76 /* WGViewController.swift in Sources */,
 				6116A92D20A2CB1200DFCE76 /* WGUtil.swift in Sources */,
 				6158FA3A209AFEA300E54289 /* AppDelegate.swift in Sources */,
