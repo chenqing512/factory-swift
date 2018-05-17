@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxCocoa
+import RxSwift
 
 protocol LoginViewDelegate {
     func onLoginResult(result: String);
@@ -15,18 +17,50 @@ protocol LoginViewDelegate {
 class LoginViewController: WGViewController, LoginViewDelegate {
 
     private let presenter = LoginPresenter()
+    fileprivate let disposeBag = DisposeBag()
     
+    @IBOutlet weak var passwdTF: UITextField!
+    @IBOutlet weak var phoneNumTF: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.attachView(viewDelegate: self);
-        presenter.login(userName: "111", pwd: "222");
-        // Do any additional setup after loading the view.
+      //  presenter.attachView(viewDelegate: self);
+        leftButton?.isHidden = false
+        phoneNumTF.rx.text.orEmpty.bind(to: presenter.phoneNum).disposed(by: disposeBag)
+        passwdTF.rx.text.orEmpty.bind(to: presenter.userPwd).disposed(by: disposeBag)
+        
+        loginBtn.rx.tap.bind(to: presenter.loginTaps).disposed(by: disposeBag)
+        
+        presenter.loginEnable.subscribe(onNext: { [weak self] result in
+            if result {
+                self?.loginBtn.isEnabled = true
+                self?.loginBtn.backgroundColor = UIColor.blue
+            }else{
+                self?.loginBtn.isEnabled = false
+                self?.loginBtn.backgroundColor = UIColor.colorWithHexString(stringToConvert: "bdbdbd")
+            }
+        }).disposed(by: disposeBag);
+        
+        presenter.loginResult.subscribe(onNext: { [weak self] result in
+            if result {
+                print("登录成功")
+            }else{
+                print("登录失败")
+            }
+        }).disposed(by: disposeBag)
+       
     }
     
     func onLoginResult(result: String) {
         print("登录回调")
     }
 
+    @IBAction func loginClick(_ sender: Any) {
+    }
+    
+    @IBAction func registerClick(_ sender: Any) {
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

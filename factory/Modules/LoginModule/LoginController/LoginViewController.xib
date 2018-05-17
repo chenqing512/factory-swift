@@ -12,6 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="factory" customModuleProvider="target">
             <connections>
+                <outlet property="loginBtn" destination="AUD-8O-XY1" id="ydI-h4-T1o"/>
+                <outlet property="passwdTF" destination="YcO-3j-9L8" id="0aT-6V-S8y"/>
+                <outlet property="phoneNumTF" destination="wml-Zm-veh" id="Qb4-k8-mn1"/>
+                <outlet property="registerBtn" destination="RPG-i3-hig" id="bfR-rh-VKo"/>
                 <outlet property="view" destination="yIg-Y5-69s" id="eHK-SO-6qy"/>
             </connections>
         </placeholder>
@@ -93,7 +97,7 @@
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <state key="normal" title="登录">
-                        <color key="titleColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -101,6 +105,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="loginClick:" destination="-1" eventType="touchUpInside" id="S7j-of-WtP"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPG-i3-hig">
                     <rect key="frame" x="112" y="345" width="150" height="44"/>
@@ -119,6 +126,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="registerClick:" destination="-1" eventType="touchUpInside" id="TRz-sG-ZOz"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

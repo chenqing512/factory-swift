@@ -19,14 +19,14 @@ class WGViewController: UIViewController {
     /// 返回按钮点击事件
     ///
     /// - Parameter btn: btn
-    public func backButtonClick(btn: UIButton){
-        
+    @objc public func backButtonClick(btn: UIButton){
+        navigationController?.popViewController(animated: true);
     }
     
     /// 右侧按钮点击事件
     ///
     /// - Parameter btn: btn
-    public func otherButtonClick(btn: UIButton){
+    @objc public func otherButtonClick(btn: UIButton){
         
     }
     
@@ -39,10 +39,14 @@ class WGViewController: UIViewController {
     // MARK: Lift Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateLabel();
+        updateButton();
+        leftButton?.isHidden = true;
+        rightButton?.isHidden = true;
         
     }
     
+    /// 添加title视图
     private func updateLabel(){
         labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 130, height: 44));
         labelTitle?.text = "";
@@ -51,6 +55,29 @@ class WGViewController: UIViewController {
         labelTitle?.backgroundColor = UIColor.clear;
         navigationItem.titleView?.frame = CGRect(x: 0, y: 0, width: 375, height: 44);
         navigationItem.titleView = labelTitle;
+    }
+    
+    /// 添加左右导航栏按钮
+    private func updateButton(){
+        leftButton = UIButton(type: UIButtonType.custom);
+        leftButton?.addTarget(self, action: #selector(backButtonClick(btn:)), for: UIControlEvents.touchUpInside);
+        leftButton?.frame = CGRect(x: 0, y: 0, width: 45, height: 19);
+        leftButton?.setImage(UIImage(named: "nav_back_btn"), for: UIControlState.normal);
+        leftButton?.setImage(UIImage(named: "nav_back_btn"), for: UIControlState.selected);
+        leftButton?.contentHorizontalAlignment = .left
+        let leftItem = UIBarButtonItem(customView: leftButton!);
+        navigationItem.leftBarButtonItem = leftItem;
+        
+        
+        rightButton = UIButton(type: UIButtonType.custom);
+        rightButton?.addTarget(self, action: #selector(otherButtonClick(btn:)), for: UIControlEvents.touchUpInside);
+        rightButton?.titleLabel?.font = UIFont.systemFont(ofSize: 15);
+        rightButton?.frame = CGRect(x: 0, y: 2, width: 45, height: 25);
+        rightButton?.setTitle("", for: UIControlState.normal);
+        rightButton?.contentHorizontalAlignment = UIControlContentHorizontalAlignment.right;
+        rightButton?.setTitleColor(UIColor.colorWithHexString(stringToConvert: "2b364e"), for: .normal)
+        let rightItem = UIBarButtonItem(customView: rightButton!);
+        navigationItem.rightBarButtonItem = rightItem;
     }
 
     override func didReceiveMemoryWarning() {
