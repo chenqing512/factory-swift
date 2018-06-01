@@ -27,6 +27,7 @@ class LoginViewController: WGViewController, LoginViewDelegate {
         super.viewDidLoad()
       //  presenter.attachView(viewDelegate: self);
         leftButton?.isHidden = false
+        labelTitle?.text = "登录"
         phoneNumTF.rx.text.orEmpty.bind(to: presenter.phoneNum).disposed(by: disposeBag)
         passwdTF.rx.text.orEmpty.bind(to: presenter.userPwd).disposed(by: disposeBag)
         

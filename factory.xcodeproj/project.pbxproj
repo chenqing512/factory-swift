@@ -42,6 +42,7 @@
 		61663F6520A571DE00E4054A /* start_up_logo_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F5F20A571DE00E4054A /* start_up_logo_icon@3x.png */; };
 		61663F6620A571DE00E4054A /* guide_v2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F6020A571DE00E4054A /* guide_v2@2x.png */; };
 		61663F6720A571DE00E4054A /* login_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 61663F6120A571DE00E4054A /* login_btn@2x.png */; };
+		616D6ABD20C12F3D001CD215 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616D6ABC20C12F3D001CD215 /* HTTPClient.swift */; };
 		618C741720A016CE007FC11A /* tabbar_discovery_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618C740B20A016CD007FC11A /* tabbar_discovery_icon@2x.png */; };
 		618C741820A016CE007FC11A /* tabbar_discovery_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618C740C20A016CD007FC11A /* tabbar_discovery_icon@3x.png */; };
 		618C741920A016CE007FC11A /* tabbar_discovery_icon_selected@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 618C740D20A016CD007FC11A /* tabbar_discovery_icon_selected@2x.png */; };
@@ -116,6 +117,7 @@
 		61663F5F20A571DE00E4054A /* start_up_logo_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start_up_logo_icon@3x.png"; sourceTree = "<group>"; };
 		61663F6020A571DE00E4054A /* guide_v2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide_v2@2x.png"; sourceTree = "<group>"; };
 		61663F6120A571DE00E4054A /* login_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login_btn@2x.png"; sourceTree = "<group>"; };
+		616D6ABC20C12F3D001CD215 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		618C740B20A016CD007FC11A /* tabbar_discovery_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discovery_icon@2x.png"; sourceTree = "<group>"; };
 		618C740C20A016CD007FC11A /* tabbar_discovery_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discovery_icon@3x.png"; sourceTree = "<group>"; };
 		618C740D20A016CD007FC11A /* tabbar_discovery_icon_selected@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tabbar_discovery_icon_selected@2x.png"; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		614E5813209C44DA00B928B5 /* NetWorkManager */ = {
 			isa = PBXGroup;
 			children = (
+				616D6ABC20C12F3D001CD215 /* HTTPClient.swift */,
 			);
 			path = NetWorkManager;
 			sourceTree = "<group>";
@@ -558,12 +561,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-factory/Pods-factory-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/CYLTabBarController/CYLTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CYLTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -604,6 +609,7 @@
 				615B342220A3E5FB00538C69 /* WGAvatar.swift in Sources */,
 				61663F1020A5253A00E4054A /* WGNavigationController.swift in Sources */,
 				614E581F209C456A00B928B5 /* FourViewController.swift in Sources */,
+				616D6ABD20C12F3D001CD215 /* HTTPClient.swift in Sources */,
 				615B342020A3E23F00538C69 /* WGUser.swift in Sources */,
 				61663F5120A55EDB00E4054A /* WelcomeViewController.swift in Sources */,
 				615B342620A3EC3E00538C69 /* WGImage.swift in Sources */,

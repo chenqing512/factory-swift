@@ -1,25 +1,29 @@
 PODS:
+  - Alamofire (4.7.1)
   - CYLTabBarController (1.17.6)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
 
 DEPENDENCIES:
+  - Alamofire
   - CYLTabBarController (~> 1.17.4)
   - RxCocoa
   - RxSwift
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
+    - Alamofire
     - CYLTabBarController
     - RxCocoa
     - RxSwift
 
 SPEC CHECKSUMS:
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
 
-PODFILE CHECKSUM: ba4d5269bf54a08124a8f65ac180c8b32ded9f76
+PODFILE CHECKSUM: 3364b324c3e6123c72bccbbe14ef544d98a01ea3
 
 COCOAPODS: 1.5.0

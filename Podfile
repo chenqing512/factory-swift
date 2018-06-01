@@ -5,4 +5,5 @@ target 'factory' do
 pod 'CYLTabBarController', '~> 1.17.4'
 pod 'RxSwift'
 pod 'RxCocoa'
+pod 'Alamofire'
 end
