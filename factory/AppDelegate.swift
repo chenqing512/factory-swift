@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         setupViewControllers();
         window?.rootViewController = welcomeVC;
+        registerNotification()
         window?.makeKeyAndVisible()
         
         // Override point for customization after application launch.
@@ -69,31 +70,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate {
     fileprivate func setupViewControllers(){
-        let firstNav = UINavigationController(rootViewController:FirstViewController());
-        let secondVC = UINavigationController(rootViewController:SecondViewController());
-        let thirdVC = UINavigationController(rootViewController:ThirdViewController());
+        let firstNav = UINavigationController(rootViewController:HomeViewController());
+        let secondVC = UINavigationController(rootViewController:DiscoveryViewController());
+        let thirdVC = UINavigationController(rootViewController:MessageViewController());
+        let fourthVC = UINavigationController(rootViewController:MeViewController());
         let tabBarCtrl = CYLTabBarController();
         customTabBarForController(tabBarController: tabBarCtrl);
-        tabBarCtrl.viewControllers = [firstNav,secondVC,thirdVC];
-        tabBarCtrl.tabBar.backgroundColor = UIColor.black;
+        tabBarCtrl.viewControllers = [firstNav,secondVC,thirdVC,fourthVC];
+        tabBarCtrl.tabBar.backgroundColor = UIColor.white;
         tabBarController = tabBarCtrl;
     }
     
     private func customTabBarForController(tabBarController: CYLTabBarController){
         let dict1 = [
-            CYLTabBarItemImage : "tabbar_discovery_icon",
-            CYLTabBarItemSelectedImage : "tabbar_discovery_icon_selected"
+            CYLTabBarItemImage : "home_un_select",
+            CYLTabBarItemSelectedImage : "home_select"
         ];
         let dict2 = [
-            CYLTabBarItemImage : "tabbar_homepage_icon",
-            CYLTabBarItemSelectedImage : "tabbar_homepage_icon_selected"
+            CYLTabBarItemImage : "discover_un_select",
+            CYLTabBarItemSelectedImage : "discover_select"
         ];
         
         let dict3 = [
-            CYLTabBarItemImage : "tabbar_me_icon",
-            CYLTabBarItemSelectedImage : "tabbar_me_icon_selected"
+            CYLTabBarItemImage : "message_un_select",
+            CYLTabBarItemSelectedImage : "message_select"
         ];
-        tabBarController.tabBarItemsAttributes = [dict1,dict2,dict3];
+        let dict4 = [
+            CYLTabBarItemImage : "me_un_select",
+            CYLTabBarItemSelectedImage : "me_select"
+        ];
+        tabBarController.tabBarItemsAttributes = [dict1,dict2,dict3,dict4];
 
     }
     

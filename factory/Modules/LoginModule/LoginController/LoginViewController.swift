@@ -45,6 +45,7 @@ class LoginViewController: WGViewController, LoginViewDelegate {
         
         presenter.loginResult.subscribe(onNext: { [weak self] result in
             if result {
+                NotificationCenter.default.post(name: NSNotification.Name(kWG_NOTIFICATION_ACCOUNT_LOGIN_SUCCESS), object: nil)
                 print("登录成功")
             }else{
                 print("登录失败")
