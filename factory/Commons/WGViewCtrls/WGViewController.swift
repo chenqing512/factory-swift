@@ -39,15 +39,11 @@ class WGViewController: UIViewController {
     // MARK: Lift Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateLabel();
-        updateButton();
-        leftButton?.isHidden = true;
-        rightButton?.isHidden = true;
         
     }
     
     /// 添加title视图
-    private func updateLabel(){
+    public func updateLabel(){
         labelTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 130, height: 44));
         labelTitle?.text = "";
         labelTitle?.font = UIFont.systemFont(ofSize: 18);
@@ -58,7 +54,7 @@ class WGViewController: UIViewController {
     }
     
     /// 添加左右导航栏按钮
-    private func updateButton(){
+    public func updateLeftButton(){
         leftButton = UIButton(type: UIButtonType.custom);
         leftButton?.addTarget(self, action: #selector(backButtonClick(btn:)), for: UIControlEvents.touchUpInside);
         leftButton?.frame = CGRect(x: 0, y: 0, width: 45, height: 19);
@@ -68,7 +64,9 @@ class WGViewController: UIViewController {
         let leftItem = UIBarButtonItem(customView: leftButton!);
         navigationItem.leftBarButtonItem = leftItem;
         
-        
+    }
+    
+    public func updateRightButton(){
         rightButton = UIButton(type: UIButtonType.custom);
         rightButton?.addTarget(self, action: #selector(otherButtonClick(btn:)), for: UIControlEvents.touchUpInside);
         rightButton?.titleLabel?.font = UIFont.systemFont(ofSize: 15);

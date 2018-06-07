@@ -9,7 +9,7 @@
 import UIKit
 
 #if DEBUG
-public var kHttpHost = "http://sh.pairui6.com/"  // 域名
+public var kHttpHost = "http://test40.vliao2.com/"  // 域名
 public var kPUSH_ACCOUNT = "smkj_test"  // push count
 #else
 public var kHttpHost = "http://sh.pairui6.com/"  // 域名
@@ -75,7 +75,7 @@ class WGUtil: NSObject {
     }
     
     class func createUploadCallBackBody(sn: Int, fileName: String, fileType: String, voiceTimeLen: Int, videoLength:Int, videoCoverID: Int, videoWidth: Int, videoHeight: Int, albumId: Int, askID: Int)->String{
-        let callbackBody = "userID=\(SharedData.user?.userId)&userKey=\(SharedData.user?.userKey)&sn=\(sn)&fileName=\(fileName)&fileType=\(fileType)&voiceLength=\(voiceTimeLen)&videoLength=\(videoLength)&videoCoverID=\(videoCoverID)&videoWidth=\(videoWidth)&videoHeight=\(videoHeight)&albumID=\(albumId)&askID=\(askID)&isIOS=1&bucket=${bucket}&object=${object}&etag=${etag}&size=${size}&mimeType=${mimeType}&imageInfo.height=${imageInfo.height}&imageInfo.width=${imageInfo.width}&imageInfo.format=${imageInfo.format}&appName=showmay";
+        let callbackBody = "userID=\(SharedData.user?.id)&userKey=\(SharedData.user?.userKey)&sn=\(sn)&fileName=\(fileName)&fileType=\(fileType)&voiceLength=\(voiceTimeLen)&videoLength=\(videoLength)&videoCoverID=\(videoCoverID)&videoWidth=\(videoWidth)&videoHeight=\(videoHeight)&albumID=\(albumId)&askID=\(askID)&isIOS=1&bucket=${bucket}&object=${object}&etag=${etag}&size=${size}&mimeType=${mimeType}&imageInfo.height=${imageInfo.height}&imageInfo.width=${imageInfo.width}&imageInfo.format=${imageInfo.format}&appName=showmay";
         return callbackBody;
     }
  
@@ -118,6 +118,10 @@ class WGUtil: NSObject {
     /// - Returns: Build 号
     class func getBuild()->String{
         return Bundle.main.infoDictionary!["CFBundleVersion"] as! String;
+    }
+    
+    class func statusBarHeight() -> (CGFloat){
+        return UIApplication.shared.statusBarFrame.size.height
     }
 
 }

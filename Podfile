@@ -6,4 +6,7 @@ pod 'CYLTabBarController', '~> 1.17.4'
 pod 'RxSwift'
 pod 'RxCocoa'
 pod 'Alamofire'
+pod 'HandyJSON'
+pod 'SwiftyJSON'
+pod 'SnapKit'
 end

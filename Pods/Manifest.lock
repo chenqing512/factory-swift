@@ -1,29 +1,41 @@
 PODS:
   - Alamofire (4.7.1)
   - CYLTabBarController (1.17.6)
+  - HandyJSON (4.1.1)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
+  - SnapKit (4.0.0)
+  - SwiftyJSON (4.0.0)
 
 DEPENDENCIES:
   - Alamofire
   - CYLTabBarController (~> 1.17.4)
+  - HandyJSON
   - RxCocoa
   - RxSwift
+  - SnapKit
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - CYLTabBarController
+    - HandyJSON
     - RxCocoa
     - RxSwift
+    - SnapKit
+    - SwiftyJSON
 
 SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
+  HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: 3364b324c3e6123c72bccbbe14ef544d98a01ea3
+PODFILE CHECKSUM: 3c429f8a8bb43ac4d56ea669f39ff9df4ebffb0e
 
 COCOAPODS: 1.5.0

@@ -9,6 +9,9 @@
 import UIKit
 import RxCocoa
 import RxSwift
+import HandyJSON
+import SwiftyJSON
+import Alamofire
 
 protocol LoginViewDelegate {
     func onLoginResult(result: String);
@@ -45,6 +48,10 @@ class LoginViewController: WGViewController, LoginViewDelegate {
         
         presenter.loginResult.subscribe(onNext: { [weak self] result in
             if result {
+                HTTPClientData.post(path: "auth/phone-number-login", parameters: ["phoneNumber" : "18600887850", "password" : "ABcd1234"], responseData: { (success,response)  in
+                    SharedData.user = JSONDeserializer<WGUser>.deserializeFrom(json: JSON(response).description)
+                })
+                
                 NotificationCenter.default.post(name: NSNotification.Name(kWG_NOTIFICATION_ACCOUNT_LOGIN_SUCCESS), object: nil)
                 print("登录成功")
             }else{

@@ -7,8 +7,10 @@
 //
 
 import UIKit
-
-class WGAvatar: NSObject {
+import HandyJSON
+struct WGAvatar: HandyJSON {
     var width,height: Int?
     var url: String?
+    var id: Int?
+
 }

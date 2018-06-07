@@ -7,11 +7,16 @@
 //
 
 import UIKit
-
-class WGUser: NSObject {
-    var userId: Int?
+import HandyJSON
+struct WGUser: HandyJSON {
     var userKey: String?
     var phoneNumber: String?
     var nickName: String?
     var avatar: WGAvatar?
+    var accid: String?
+    var categoryId: String?
+    var id: Int?
+    var isNoDisturbing: Bool?
+    var vcoinAmount: Int?
+    
 }

@@ -19,7 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.frame = UIScreen.main.bounds
         window?.backgroundColor = UIColor.white
         setupViewControllers();
-        window?.rootViewController = welcomeVC;
+        //window?.rootViewController = welcomeVC;
+        window?.rootViewController = tabBarController
         registerNotification()
         window?.makeKeyAndVisible()
         
