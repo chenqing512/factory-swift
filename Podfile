@@ -9,4 +9,5 @@ pod 'Alamofire'
 pod 'HandyJSON'
 pod 'SwiftyJSON'
 pod 'SnapKit'
+pod 'SDWebImage'
 end

@@ -10,6 +10,18 @@ import UIKit
 
 class HomeDetailCell: UITableViewCell{
     
+    var _vModel: BigVModel?
+    var vModel: BigVModel? {
+        get{
+            return _vModel
+        }
+        set{
+            _vModel = newValue
+            imgViewBg?.sd_setImage(with: NSURL(string: (_vModel?.avatar?.url)!)! as URL, completed: nil)
+            vBottomView.vModel = _vModel
+        }
+    }
+    
     /// 背景图片
     var imgViewBg: UIImageView?
     
@@ -21,7 +33,7 @@ class HomeDetailCell: UITableViewCell{
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = UIColor.gray
+       // self.backgroundColor = UIColor.gray
         layoutView()
     }
     
@@ -33,9 +45,9 @@ class HomeDetailCell: UITableViewCell{
         imgViewBg = UIImageView()
         addSubview(imgViewBg!)
         imgViewBg?.snp.makeConstraints({ (make) in
-            make.edges.equalTo(UIEdgeInsetsMake(0, 0, 0, 0))
+            make.edges.equalTo(UIEdgeInsetsMake(0, 0, 10, 0))
         })
-        addSubview(vBottomView)
+        imgViewBg?.addSubview(vBottomView)
         vBottomView.snp.makeConstraints { (make) in
             make.edges.equalTo(UIEdgeInsetsMake(frame.size.height-100, 0, 0, 0))
         }

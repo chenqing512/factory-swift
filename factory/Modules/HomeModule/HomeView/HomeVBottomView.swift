@@ -23,6 +23,20 @@ class HomeVBottomView: UIView {
         layoutView()
     }
     
+    var _vModel: BigVModel?
+    var vModel: BigVModel?{
+        get{
+            return _vModel
+        }
+        set{
+            _vModel = newValue
+            labName.text = _vModel?.nickname
+            labDetail.text = _vModel?.topic
+            let price = (_vModel?.vcoinPerMinute?.description)!+"V币/分钟"
+            labPrice.text = price
+        }
+    }
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -55,7 +69,7 @@ class HomeVBottomView: UIView {
         addSubview(labPrice)
         labPrice.snp.makeConstraints { (make) in
             make.right.equalTo(self.snp.right).offset(-14)
-            make.bottom.equalTo(self.snp.bottom).offset(10)
+            make.bottom.equalTo(self.snp.bottom).offset(-10)
         }
         addSubview(icon)
         icon.image = UIImage(named: "home_video")

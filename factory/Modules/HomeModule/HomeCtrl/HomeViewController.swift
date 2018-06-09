@@ -23,12 +23,12 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
     fileprivate lazy var scrollV: UIScrollView = {
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: WGUtil.screenWidth(), height: WGUtil.screenHeight()))
         scrollView.delegate = self
-        scrollView.contentSize = CGSize(width: 6*WGUtil.screenWidth(), height: WGUtil.screenHeight())
+        scrollView.contentSize = CGSize(width: CGFloat(tags.count)*WGUtil.screenWidth(), height: WGUtil.screenHeight())
         scrollView.isPagingEnabled = true
         scrollView.bounces = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.backgroundColor = UIColor.red
+      //  scrollView.backgroundColor = UIColor.red
         return scrollView
     }()
     override func viewDidLoad() {
@@ -36,10 +36,7 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         
         updateNavigationView()
-        setupViewControllers()
         loadData()
-        view.addSubview(scrollV)
-        scrollviewScrollAtIndex(index: 0)
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,8 +54,10 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
     }
     
     func setupViewControllers(){
-        for _ in 0..<6 {
+        for index in 0..<tags.count {
+            let dict = tags[index] as! [String: Any]
             let vc = HomeDetailViewController()
+            vc.idStr = dict["id"] as! Int
             ctrls.append(vc)
         }
     }
@@ -84,6 +83,9 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
             self.tags = response["data"] as! [Any]
             self.adSlide = response["adSlide"] as! [Any]
             self.titleView.titles = self.tags
+            self.setupViewControllers()
+            self.view.addSubview(self.scrollV)
+            self.scrollviewScrollAtIndex(index: 0)
             print(response)
         }
     }

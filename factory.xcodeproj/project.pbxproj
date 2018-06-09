@@ -14,6 +14,7 @@
 		6116A92D20A2CB1200DFCE76 /* WGUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6116A92C20A2CB1200DFCE76 /* WGUtil.swift */; };
 		612C5BC120A9857100F2D297 /* WGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C5BC020A9857100F2D297 /* WGColor.swift */; };
 		6154291920A6C93500342DC0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6154291820A6C93500342DC0 /* LoginViewController.xib */; };
+		61559A7C20CB79FA001929AA /* BigVModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61559A7B20CB79FA001929AA /* BigVModel.swift */; };
 		6158091D20C6714E0068926F /* HomeTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158091C20C6714E0068926F /* HomeTitleCollectionViewCell.swift */; };
 		6158091F20C6A6320068926F /* HomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158091E20C6A6320068926F /* HomeDetailViewController.swift */; };
 		6158092120C6A6A00068926F /* HomeDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6158092020C6A6A00068926F /* HomeDetailCell.swift */; };
@@ -96,6 +97,7 @@
 		6116A92C20A2CB1200DFCE76 /* WGUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGUtil.swift; sourceTree = "<group>"; };
 		612C5BC020A9857100F2D297 /* WGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WGColor.swift; sourceTree = "<group>"; };
 		6154291820A6C93500342DC0 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		61559A7B20CB79FA001929AA /* BigVModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BigVModel.swift; sourceTree = "<group>"; };
 		6158091C20C6714E0068926F /* HomeTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleCollectionViewCell.swift; sourceTree = "<group>"; };
 		6158091E20C6A6320068926F /* HomeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailViewController.swift; sourceTree = "<group>"; };
 		6158092020C6A6A00068926F /* HomeDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailCell.swift; sourceTree = "<group>"; };
@@ -473,6 +475,7 @@
 		6194562020C27ACB002E990E /* HomeModel */ = {
 			isa = PBXGroup;
 			children = (
+				61559A7B20CB79FA001929AA /* BigVModel.swift */,
 			);
 			path = HomeModel;
 			sourceTree = "<group>";
@@ -661,6 +664,7 @@
 				"${BUILT_PRODUCTS_DIR}/HandyJSON/HandyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
@@ -671,6 +675,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HandyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
@@ -721,6 +726,7 @@
 				615B342420A3E9F800538C69 /* WGShare.swift in Sources */,
 				615B342820A3F72700538C69 /* WGSharedMacr.swift in Sources */,
 				619455E820C269EB002E990E /* MessageViewController.swift in Sources */,
+				61559A7C20CB79FA001929AA /* BigVModel.swift in Sources */,
 				61663F5820A564CB00E4054A /* LoginModel.swift in Sources */,
 				61663F5420A563A900E4054A /* LoginViewController.swift in Sources */,
 				6158092320C6A8D40068926F /* HomeVBottomView.swift in Sources */,
