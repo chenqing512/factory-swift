@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol HomeTitleDelegate {
+    func selectTitleIndex(index: Int)
+}
+
 class HomeTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSource {
     
 //    typealias ButtonClick = (String) -> Void
@@ -24,20 +28,29 @@ class HomeTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
             createLineView()
         }
     }
+    var _selectIndex: Int?
+    /// 选中的index
+    var selectIndex: Int?{
+        get{
+            return _selectIndex
+        }
+        set{
+            _selectIndex = newValue
+            if lastIndex != _selectIndex {
+                lastIndex = _selectIndex
+                lineView.frame.origin.x = CGFloat(itemWidth*_selectIndex!)
+            }
+        }
+    }
+    /// 上次选中的index
+    var lastIndex: Int?
     var collectionView: UICollectionView?
     var lineView = UIView()  //底部线条
     var itemWidth = 0
+    var delegate: HomeTitleDelegate?
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-//        titles.append(["title":"关注"])
-//        titles.append(["title":"推荐"])
-//        titles.append(["title":"新人"])
-//        titles.append(["title":"三星"])
-//        titles.append(["title":"四星"])
-//        titles.append(["title":"五星"])
-//        layoutView()
-//        createLineView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -83,6 +96,9 @@ class HomeTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if delegate != nil {
+            delegate?.selectTitleIndex(index: indexPath.row)
+        }
         lineView.frame.origin.x = CGFloat(itemWidth*indexPath.row)
     }
     

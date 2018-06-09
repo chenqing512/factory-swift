@@ -10,10 +10,11 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import HandyJSON
-class HomeViewController: WGViewController, UIScrollViewDelegate {
+class HomeViewController: WGViewController, UIScrollViewDelegate, HomeTitleDelegate {
 
     fileprivate lazy var titleView: HomeTitleView = {
         let v = HomeTitleView(frame: CGRect(x: 0, y: 0, width: WGUtil.screenWidth()-80, height: 36.5))
+        v.delegate = self
         return v
     }()
     
@@ -65,16 +66,20 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
     //MARK: scrollview 代理方法
     func scrollviewScrollAtIndex(index: Int){
         let ctrl = ctrls[index] as! UIViewController
+        scrollV.setContentOffset(CGPoint(x: index * Int(WGUtil.screenWidth()), y: 0), animated: true)
         if ctrl.isViewLoaded {
             return
         }
-        ctrl.view.frame = scrollV.bounds
+        ctrl.view.frame = CGRect(x: CGFloat(index) * WGUtil.screenWidth(), y: 0, width: WGUtil.screenWidth(), height: scrollV.bounds.size.height)
         scrollV.addSubview(ctrl.view)
+        
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        let ind = scrollView.contentOffset.x/WGUtil.screenWidth()
-        scrollviewScrollAtIndex(index: Int(ind))
+        let ind = Int(scrollView.contentOffset.x/WGUtil.screenWidth())
+        scrollviewScrollAtIndex(index: ind)
+        titleView.selectIndex = ind
     }
     
     
@@ -88,6 +93,10 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
             self.scrollviewScrollAtIndex(index: 0)
             print(response)
         }
+    }
+    
+    func selectTitleIndex(index: Int) {
+        scrollviewScrollAtIndex(index: index)
     }
    
 
