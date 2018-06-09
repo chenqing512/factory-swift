@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import HandyJSON
 class HomeViewController: WGViewController, UIScrollViewDelegate {
 
     fileprivate lazy var titleView: HomeTitleView = {
@@ -15,7 +17,9 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
         return v
     }()
     
-    var ctrls: Array<Any> = []
+    var ctrls = [Any]()
+    var adSlide = [Any]()
+    var tags = [Any]()
     fileprivate lazy var scrollV: UIScrollView = {
         let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: WGUtil.screenWidth(), height: WGUtil.screenHeight()))
         scrollView.delegate = self
@@ -29,8 +33,11 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
     }()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
+        
         updateNavigationView()
         setupViewControllers()
+        loadData()
         view.addSubview(scrollV)
         scrollviewScrollAtIndex(index: 0)
     }
@@ -40,6 +47,7 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    //MARK: 添加UI
     func updateNavigationView(){
         updateLeftButton()
         leftButton?.isHidden = false
@@ -55,6 +63,7 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
         }
     }
     
+    //MARK: scrollview 代理方法
     func scrollviewScrollAtIndex(index: Int){
         let ctrl = ctrls[index] as! UIViewController
         if ctrl.isViewLoaded {
@@ -65,10 +74,19 @@ class HomeViewController: WGViewController, UIScrollViewDelegate {
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        var ind = scrollView.contentOffset.x/WGUtil.screenWidth()
+        let ind = scrollView.contentOffset.x/WGUtil.screenWidth()
         scrollviewScrollAtIndex(index: Int(ind))
     }
     
+    
+    func loadData(){
+        HTTPClientData.post(path: "v31/homepage-tag", parameters: [:]) { (success, response) in
+            self.tags = response["data"] as! [Any]
+            self.adSlide = response["adSlide"] as! [Any]
+            self.titleView.titles = self.tags
+            print(response)
+        }
+    }
    
 
 }

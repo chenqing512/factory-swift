@@ -13,6 +13,7 @@ let SharedData = WGSharedData.Shared
 
 class WGSharedData: NSObject {
     var user: WGUser?
+    var tabBarHeight: CGFloat = 0
     static let Shared = WGSharedData();
     private override init() {}
     override func copy() -> Any {

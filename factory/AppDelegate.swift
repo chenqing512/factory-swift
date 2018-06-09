@@ -79,6 +79,7 @@ extension AppDelegate {
         customTabBarForController(tabBarController: tabBarCtrl);
         tabBarCtrl.viewControllers = [firstNav,secondVC,thirdVC,fourthVC];
         tabBarCtrl.tabBar.backgroundColor = UIColor.white;
+        SharedData.tabBarHeight = tabBarCtrl.tabBar.frame.size.height
         tabBarController = tabBarCtrl;
     }
     

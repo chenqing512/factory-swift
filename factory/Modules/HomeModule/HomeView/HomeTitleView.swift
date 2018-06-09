@@ -13,20 +13,31 @@ class HomeTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
 //    typealias ButtonClick = (String) -> Void
 //
 //    var buttonClick: ButtonClick?
-    var titles = Array<[String: Any]>()
+    var _titles: Array<Any>?
+    var titles: Array<Any>? {
+        get{
+            return _titles
+        }
+        set{
+            _titles = newValue
+            layoutView()
+            createLineView()
+        }
+    }
     var collectionView: UICollectionView?
     var lineView = UIView()  //底部线条
     var itemWidth = 0
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        titles.append(["title":"关注"])
-        titles.append(["title":"推荐"])
-        titles.append(["title":"新人"])
-        titles.append(["title":"三星"])
-        titles.append(["title":"四星"])
-        titles.append(["title":"五星"])
-        layoutView()
-        createLineView()
+//        titles.append(["title":"关注"])
+//        titles.append(["title":"推荐"])
+//        titles.append(["title":"新人"])
+//        titles.append(["title":"三星"])
+//        titles.append(["title":"四星"])
+//        titles.append(["title":"五星"])
+//        layoutView()
+//        createLineView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,7 +48,7 @@ class HomeTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
-        itemWidth = Int(self.frame.size.width) / titles.count
+        itemWidth = Int(self.frame.size.width) / titles!.count
         let itemHeight = self.frame.size.height - 5
         layout.itemSize = CGSize(width: CGFloat(itemWidth), height: itemHeight)
         layout.scrollDirection = .horizontal
@@ -53,12 +64,12 @@ class HomeTitleView: UIView, UICollectionViewDelegate, UICollectionViewDataSourc
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! HomeTitleCollectionViewCell
 //        cell.backgroundColor = UIColor.white
-        let dic = titles[indexPath.row]
-        cell.titleLabel.text = dic["title"] as? String
+        let dic = titles![indexPath.row] as? [String: Any]
+        cell.titleLabel.text = dic!["name"] as? String
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return titles.count
+        return titles!.count
     }
     
     

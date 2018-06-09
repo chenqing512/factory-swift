@@ -26,7 +26,7 @@ class HomeDetailViewController: WGViewController, UITableViewDelegate, UITableVi
     
 
     func layoutView(){
-        tableV = UITableView(frame: CGRect(x: 0, y: 0, width: WGUtil.screenWidth(), height: WGUtil.screenHeight()), style: .plain)
+        tableV = UITableView(frame: CGRect(x: 0, y: 0, width: WGUtil.screenWidth(), height: WGUtil.screenHeight()-WGUtil.statusBarHeight()-44-SharedData.tabBarHeight), style: .plain)
         tableV?.delegate = self
         tableV?.dataSource = self
         tableV?.separatorStyle = .none
