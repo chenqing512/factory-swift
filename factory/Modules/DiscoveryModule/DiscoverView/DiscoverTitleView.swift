@@ -8,8 +8,12 @@
 
 import UIKit
 
+protocol DiscoverItemDelegate {
+    func selectItemAtIndex(index: Int)
+}
+
 class DiscoverTitleView: UIView {
-    
+    var delegate: DiscoverItemDelegate?
     var segment: UISegmentedControl?
     var tits: [Any]?
     var lineV: UIView?
@@ -38,14 +42,18 @@ class DiscoverTitleView: UIView {
         segment?.addTarget(self, action: #selector(segmentClickIndex(seg:)), for: .valueChanged)
         addSubview(segment!)
         
-        lineV = UIView(frame: CGRect(x: 60, y: CGFloat((segment?.frame.size.height)!) - 10, width: 60, height: 3))
+        lineV = UIView(frame: CGRect(x: 15+60, y: CGFloat((segment?.frame.size.height)!) - 7, width: 30, height: 3))
         lineV?.backgroundColor = UIColor.colorWithHexString(stringToConvert: "ff2e79")
         segment?.addSubview(lineV!)
     }
     
     @objc func segmentClickIndex(seg: UISegmentedControl){
-        lineV?.frame.origin.x = CGFloat(seg.selectedSegmentIndex * 60)
-        print("点击\(index)")
+        if delegate != nil {
+            lineV?.frame.origin.x = CGFloat(seg.selectedSegmentIndex * 60) + 15
+            print("点击\(seg.selectedSegmentIndex)")
+            delegate?.selectItemAtIndex(index: seg.selectedSegmentIndex)
+        }
+        
     }
     
 }
