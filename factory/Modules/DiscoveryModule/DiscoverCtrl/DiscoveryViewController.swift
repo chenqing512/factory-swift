@@ -10,10 +10,11 @@ import UIKit
 
 class DiscoveryViewController: WGViewController {
 
+    var titleView: DiscoverTitleView?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        titleView = DiscoverTitleView(frame: CGRect(x: 0, y: 0, width: 180, height: 44), titles: ["热门","最新","关注"])
+        navigationItem.titleView = titleView
     }
 
     override func didReceiveMemoryWarning() {

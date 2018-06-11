@@ -40,7 +40,6 @@
 		61663F5620A563DD00E4054A /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61663F5520A563DD00E4054A /* LoginPresenter.swift */; };
 		61663F5820A564CB00E4054A /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61663F5720A564CB00E4054A /* LoginModel.swift */; };
 		616D6ABD20C12F3D001CD215 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 616D6ABC20C12F3D001CD215 /* HTTPClient.swift */; };
-		619455E420C269CB002E990E /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619455E320C269CB002E990E /* DiscoveryViewController.swift */; };
 		619455E620C269DC002E990E /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619455E520C269DC002E990E /* MeViewController.swift */; };
 		619455E820C269EB002E990E /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619455E720C269EB002E990E /* MessageViewController.swift */; };
 		6194560220C26BE4002E990E /* discover_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 619455EA20C26BE4002E990E /* discover_select@2x.png */; };
@@ -69,6 +68,8 @@
 		6194561920C26BE4002E990E /* start_up_logo_icon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6194560120C26BE4002E990E /* start_up_logo_icon@3x.png */; };
 		6194562120C27ACB002E990E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194561D20C27ACA002E990E /* HomeViewController.swift */; };
 		6194562320C27B17002E990E /* HomeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6194562220C27B17002E990E /* HomeTitleView.swift */; };
+		6196105620CE0AB5004A6100 /* DiscoveryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6196105520CE0AB5004A6100 /* DiscoveryViewController.swift */; };
+		6196105820CE0ADD004A6100 /* DiscoverTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6196105720CE0ADD004A6100 /* DiscoverTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,7 +130,6 @@
 		61663F5520A563DD00E4054A /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		61663F5720A564CB00E4054A /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
 		616D6ABC20C12F3D001CD215 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
-		619455E320C269CB002E990E /* DiscoveryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
 		619455E520C269DC002E990E /* MeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		619455E720C269EB002E990E /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		619455EA20C26BE4002E990E /* discover_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "discover_select@2x.png"; sourceTree = "<group>"; };
@@ -158,6 +158,8 @@
 		6194560120C26BE4002E990E /* start_up_logo_icon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "start_up_logo_icon@3x.png"; sourceTree = "<group>"; };
 		6194561D20C27ACA002E990E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		6194562220C27B17002E990E /* HomeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleView.swift; sourceTree = "<group>"; };
+		6196105520CE0AB5004A6100 /* DiscoveryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoveryViewController.swift; sourceTree = "<group>"; };
+		6196105720CE0ADD004A6100 /* DiscoverTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverTitleView.swift; sourceTree = "<group>"; };
 		61C3903920A1805800442C4A /* factory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "factory-Bridging-Header.h"; sourceTree = "<group>"; };
 		E7F33955D06218413EEFC8A6 /* Pods-factory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-factory.release.xcconfig"; path = "Pods/Target Support Files/Pods-factory/Pods-factory.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -386,7 +388,10 @@
 		619455DE20C26989002E990E /* DiscoveryModule */ = {
 			isa = PBXGroup;
 			children = (
-				619455E320C269CB002E990E /* DiscoveryViewController.swift */,
+				6196105420CE0AB5004A6100 /* DiscoverCtrl */,
+				6196105320CE0AB5004A6100 /* DiscoverModel */,
+				6196105220CE0AB5004A6100 /* DiscoverPresenter */,
+				6196105120CE0AB5004A6100 /* DiscoverView */,
 			);
 			path = DiscoveryModule;
 			sourceTree = "<group>";
@@ -478,6 +483,36 @@
 				61559A7B20CB79FA001929AA /* BigVModel.swift */,
 			);
 			path = HomeModel;
+			sourceTree = "<group>";
+		};
+		6196105120CE0AB5004A6100 /* DiscoverView */ = {
+			isa = PBXGroup;
+			children = (
+				6196105720CE0ADD004A6100 /* DiscoverTitleView.swift */,
+			);
+			path = DiscoverView;
+			sourceTree = "<group>";
+		};
+		6196105220CE0AB5004A6100 /* DiscoverPresenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DiscoverPresenter;
+			sourceTree = "<group>";
+		};
+		6196105320CE0AB5004A6100 /* DiscoverModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DiscoverModel;
+			sourceTree = "<group>";
+		};
+		6196105420CE0AB5004A6100 /* DiscoverCtrl */ = {
+			isa = PBXGroup;
+			children = (
+				6196105520CE0AB5004A6100 /* DiscoveryViewController.swift */,
+			);
+			path = DiscoverCtrl;
 			sourceTree = "<group>";
 		};
 		6F5C629DB23F7B705D7FCCBB /* Pods */ = {
@@ -710,7 +745,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				612C5BC120A9857100F2D297 /* WGColor.swift in Sources */,
-				619455E420C269CB002E990E /* DiscoveryViewController.swift in Sources */,
+				6196105620CE0AB5004A6100 /* DiscoveryViewController.swift in Sources */,
 				619455E620C269DC002E990E /* MeViewController.swift in Sources */,
 				615B342220A3E5FB00538C69 /* WGAvatar.swift in Sources */,
 				61663F1020A5253A00E4054A /* WGNavigationController.swift in Sources */,
@@ -735,6 +770,7 @@
 				6116A92A20A283AF00DFCE76 /* WGViewController.swift in Sources */,
 				6116A92D20A2CB1200DFCE76 /* WGUtil.swift in Sources */,
 				6158FA3A209AFEA300E54289 /* AppDelegate.swift in Sources */,
+				6196105820CE0ADD004A6100 /* DiscoverTitleView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

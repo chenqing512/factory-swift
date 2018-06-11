@@ -57,12 +57,14 @@ class HomeDetailViewController: WGViewController, UITableViewDelegate, UITableVi
             self.currPage = response["currPage"] as? Int
             self.maxPage = response["currPage"] as? Int
             
-            for index in 0..<data!.count{
-                let dic = data![index] as! [String: Any]
-                let bigVModel = JSONDeserializer<BigVModel>.deserializeFrom(dict: dic)
-                self.dataArray.append(bigVModel!)
+            if data != nil {
+                for index in 0..<data!.count{
+                    let dic = data![index] as! [String: Any]
+                    let bigVModel = JSONDeserializer<BigVModel>.deserializeFrom(dict: dic)
+                    self.dataArray.append(bigVModel!)
+                }
+                self.tableV?.reloadData()
             }
-            self.tableV?.reloadData()
             print(response)
         }
     }
