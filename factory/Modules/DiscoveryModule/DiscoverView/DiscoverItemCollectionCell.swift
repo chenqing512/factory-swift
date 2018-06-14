@@ -9,6 +9,16 @@
 import UIKit
 
 class DiscoverItemCollectionCell: UICollectionViewCell {
+    
+    var _videoModel: VideoModel?
+    var videoModel: VideoModel?{
+        get{
+            return _videoModel
+        }
+        set{
+            _videoModel = newValue
+        }
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)

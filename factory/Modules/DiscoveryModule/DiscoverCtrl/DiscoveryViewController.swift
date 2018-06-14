@@ -33,8 +33,17 @@ class DiscoveryViewController: WGViewController, UIScrollViewDelegate, DiscoverI
     }
     
     func setupCtrls(){
-        for _ in 0..<3 {
+        for index in 0..<3 {
             let vc = DiscoverItemCtroller()
+            if index == 0 {
+                vc.type = .HOT
+            }
+            if index == 1 {
+                vc.type = .NEW
+            }
+            if index == 2 {
+                vc.type = .ATTENTION
+            }
             items.append(vc)
         }
     }

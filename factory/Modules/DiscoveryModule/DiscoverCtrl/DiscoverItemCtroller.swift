@@ -7,9 +7,25 @@
 //
 
 import UIKit
+import HandyJSON
+
+enum DiscoverType: Int {
+    case HOT
+    case NEW
+    case ATTENTION
+}
 
 class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    var _type: DiscoverType!
+    var type: DiscoverType! {
+        get{
+            return _type
+        }
+        set{
+            _type = newValue
+        }
+    }
     lazy var collectiV: UICollectionView = {
         let width = (WGUtil.screenWidth() - 5)/2
         let layout = UICollectionViewFlowLayout()
@@ -23,19 +39,21 @@ class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollec
         collectiView.register(DiscoverItemCollectionCell.self, forCellWithReuseIdentifier: "cellId")
         return collectiView
     }()
-    var items: [Any]?
+    var currPage: Int?
+    var maxPage: Int?
+    var items: [Any] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectiV.delegate = self
         collectiV.dataSource = self
         view.addSubview(collectiV)
+        loadData()
         
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
-        //return (items?.count)!
+        return items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -45,6 +63,35 @@ class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+    }
+    
+    
+    func loadData(){
+        var pathStr: String?
+        switch type {
+        case .HOT:
+            pathStr = "v32/smallvideo/hot-list"
+        case .NEW:
+            pathStr = "v32/smallvideo/new-list"
+        case .ATTENTION:
+            pathStr = "v32/smallvideo/follow-list"
+        default:
+            pathStr = "v32/smallvideo/hot-list"
+        }
+        HTTPClientData.post(path: pathStr!, parameters: ["page":1]) { (success, response) in
+            var data = response["data"] as? [Any]
+            self.currPage = response["currPage"] as? Int
+            self.maxPage = response["maxPage"] as? Int
+            if data != nil {
+                for index in 0..<data!.count{
+                    let dict = data![index] as! [String: Any]
+                    let videoModel = JSONDeserializer<VideoModel>.deserializeFrom(dict: dict)
+                    self.items.append(videoModel!)
+                    self.collectiV.reloadData()
+                }
+            }
+            
+        }
     }
     
 
