@@ -17,7 +17,7 @@ class HomeDetailCell: UITableViewCell{
         }
         set{
             _vModel = newValue
-            imgViewBg?.sd_setImage(with: NSURL(string: (_vModel?.avatar?.url)!)! as URL, completed: nil)
+            imgViewBg?.sd_setImage(with: URL(string: (_vModel?.avatar?.url)!), placeholderImage: UIImage(named: "default_avatar.jpg"), options: [], completed: nil)
             vBottomView.vModel = _vModel
         }
     }

@@ -57,7 +57,8 @@ class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollec
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cellId", for: indexPath) as! DiscoverItemCollectionCell
+        cell.videoModel = items[indexPath.row] as? VideoModel
         return cell
     }
     
@@ -87,8 +88,8 @@ class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollec
                     let dict = data![index] as! [String: Any]
                     let videoModel = JSONDeserializer<VideoModel>.deserializeFrom(dict: dict)
                     self.items.append(videoModel!)
-                    self.collectiV.reloadData()
                 }
+                self.collectiV.reloadData()
             }
             
         }
