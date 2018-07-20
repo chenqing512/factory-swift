@@ -26,6 +26,8 @@ class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollec
             _type = newValue
         }
     }
+    var mjheader = MJRefreshNormalHeader()
+    var mjfooter = MJRefreshBackNormalFooter()
     lazy var collectiV: UICollectionView = {
         let width = (WGUtil.screenWidth() - 5)/2
         let layout = UICollectionViewFlowLayout()
@@ -45,11 +47,15 @@ class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollec
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        currPage = 1
         collectiV.delegate = self
         collectiV.dataSource = self
         view.addSubview(collectiV)
-        loadData()
-        
+        mjheader.setRefreshingTarget(self, refreshingAction: #selector(loadData))
+        collectiV.mj_header = mjheader
+        collectiV.mj_header.beginRefreshing()
+        mjfooter.setRefreshingTarget(self, refreshingAction: #selector(loadData))
+        mjfooter.setTitle("我是有底线的", for: .noMoreData)
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -67,7 +73,11 @@ class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollec
     }
     
     
-    func loadData(){
+    @objc func loadData(){
+        if currPage != nil && currPage! > 1 && currPage! >= maxPage! {
+            mjfooter.endRefreshingWithNoMoreData()
+            return
+        }
         var pathStr: String?
         switch type {
         case .HOT:
@@ -79,9 +89,17 @@ class DiscoverItemCtroller: WGViewController, UICollectionViewDelegate, UICollec
         default:
             pathStr = "v32/smallvideo/hot-list"
         }
-        HTTPClientData.post(path: pathStr!, parameters: ["page":1]) { (success, response) in
+        HTTPClientData.post(path: pathStr!, parameters: ["page":currPage!]) { (success, response) in
+            self.mjheader.endRefreshing()
+            self.mjfooter.endRefreshing()
             var data = response["data"] as? [Any]
             self.currPage = response["currPage"] as? Int
+            if self.currPage == nil {
+                self.currPage = 1
+            }
+            if self.currPage == 1 {
+                self.items.removeAll()
+            }
             self.maxPage = response["maxPage"] as? Int
             if data != nil {
                 for index in 0..<data!.count{

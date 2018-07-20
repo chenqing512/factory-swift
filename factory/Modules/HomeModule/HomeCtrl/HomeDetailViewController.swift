@@ -15,6 +15,8 @@ class HomeDetailViewController: WGViewController, UITableViewDelegate, UITableVi
     var idStr: Int = 1
     var currPage: Int?
     var maxPage: Int?
+    var mjheader = MJRefreshNormalHeader()
+    var mjfooter = MJRefreshBackNormalFooter()
     var tableV: UITableView?
     var dataArray: Array<Any> = []
     lazy var emptyView: WGEmptyView = {
@@ -24,12 +26,18 @@ class HomeDetailViewController: WGViewController, UITableViewDelegate, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        currPage = 1
         layoutView()
         //self.view.backgroundColor = UIColor.blue
         view.addSubview(emptyView)
         emptyView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
+        mjfooter.setRefreshingTarget(self, refreshingAction: #selector(createData))
+        mjheader.setRefreshingTarget(self, refreshingAction: #selector(loadMoreData))
+        tableV?.mj_footer = mjfooter
+        tableV?.mj_header = mjheader
+        mjfooter.setTitle("我是有底线的", for: .noMoreData)
         
         loadData()
     }
@@ -60,11 +68,25 @@ class HomeDetailViewController: WGViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    func loadData(){
-        HTTPClientData.post(path: "v31/homepage", parameters: ["tagId":idStr,"page":1]) { (success, response) in
+    @objc func createData(){
+        currPage = 1;
+        loadData()
+    }
+    
+    @objc func loadMoreData(){
+        currPage = currPage! + 1
+        loadData()
+    }
+    
+    @objc func loadData(){
+        if currPage! > 1 && currPage! >= maxPage! {
+            mjfooter.endRefreshingWithNoMoreData()
+            return
+        }
+        HTTPClientData.post(path: "v31/homepage", parameters: ["tagId":idStr,"page":currPage!]) { (success, response) in
             var data = response["data"] as? [Any]
-            self.currPage = response["currPage"] as? Int
-            self.maxPage = response["currPage"] as? Int
+            self.currPage = Int((response["currPage"] as? String)!)
+            self.maxPage = response["maxPage"] as? Int
             
             if data != nil {
                 self.emptyView.isHidden = true
@@ -75,6 +97,8 @@ class HomeDetailViewController: WGViewController, UITableViewDelegate, UITableVi
                 }
                 self.tableV?.reloadData()
             }
+            self.mjfooter.endRefreshing()
+            self.mjheader.endRefreshing()
             print(response)
         }
     }

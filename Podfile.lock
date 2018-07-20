@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.7.1)
   - CYLTabBarController (1.17.6)
   - HandyJSON (4.1.1)
+  - MJRefresh (3.1.15.3)
   - RxCocoa (4.1.2):
     - RxSwift (~> 4.0)
   - RxSwift (4.1.2)
@@ -15,6 +16,7 @@ DEPENDENCIES:
   - Alamofire
   - CYLTabBarController (~> 1.17.4)
   - HandyJSON
+  - MJRefresh
   - RxCocoa
   - RxSwift
   - SDWebImage
@@ -26,6 +28,7 @@ SPEC REPOS:
     - Alamofire
     - CYLTabBarController
     - HandyJSON
+    - MJRefresh
     - RxCocoa
     - RxSwift
     - SDWebImage
@@ -36,12 +39,13 @@ SPEC CHECKSUMS:
   Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
   CYLTabBarController: c374643dea6dadece8bdff9c70f7387f8ffd7d08
   HandyJSON: 3a3de917c4118767ffe41c29b5acba23409649f4
+  MJRefresh: b48380ae2b927b46c4ef000de9adb8dc748e1df7
   RxCocoa: d88ba0f1f6abf040011a9eb4b539324fc426843a
   RxSwift: e49536837d9901277638493ea537394d4b55f570
   SDWebImage: de4d90b5bff3571eae7bd16202b1f43135409fa5
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
 
-PODFILE CHECKSUM: acfe540b8b7c01714547064c4d839b2ece14b98d
+PODFILE CHECKSUM: 827234fa926eb8a08655f25fd191c1efae8332cd
 
 COCOAPODS: 1.5.0

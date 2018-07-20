@@ -10,4 +10,5 @@ pod 'HandyJSON'
 pod 'SwiftyJSON'
 pod 'SnapKit'
 pod 'SDWebImage'
+pod 'MJRefresh'
 end
