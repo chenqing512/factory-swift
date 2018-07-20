@@ -17,11 +17,20 @@ class HomeDetailViewController: WGViewController, UITableViewDelegate, UITableVi
     var maxPage: Int?
     var tableV: UITableView?
     var dataArray: Array<Any> = []
+    lazy var emptyView: WGEmptyView = {
+        let v = WGEmptyView(frame: self.view.bounds)
+        return v
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.backgroundColor = UIColor.blue
         layoutView()
+        //self.view.backgroundColor = UIColor.blue
+        view.addSubview(emptyView)
+        emptyView.snp.makeConstraints { (make) in
+            make.edges.equalTo(self.view)
+        }
+        
         loadData()
     }
 
@@ -58,6 +67,7 @@ class HomeDetailViewController: WGViewController, UITableViewDelegate, UITableVi
             self.maxPage = response["currPage"] as? Int
             
             if data != nil {
+                self.emptyView.isHidden = true
                 for index in 0..<data!.count{
                     let dic = data![index] as! [String: Any]
                     let bigVModel = JSONDeserializer<BigVModel>.deserializeFrom(dict: dic)
